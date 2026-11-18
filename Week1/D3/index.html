@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-content">
+            <h1>👥 Employee Directory</h1>
+            <span id="serverStatus" class="status-badge offline">Server: Offline</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Search and Filters Section -->
+        <section class="filter-box">
+            <div class="search-group">
+                <input type="text" id="searchInput" aria-label="Search employees by name, role, or email"
+                    placeholder="Search by name, role, email..." maxlength="100" autocomplete="off">
+            </div>
+
+            <div class="dropdowns">
+                <div class="input-field">
+                    <label for="deptFilter">Department:</label>
+                    <select id="deptFilter">
+                        <option value="all">All Departments</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Product">Product</option>
+                        <option value="Design">Design</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Analytics">Analytics</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <label for="statusFilter">Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="Active">Active</option>
+                        <option value="On Leave">On Leave</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <label for="locationFilter">Location:</label>
+                    <select id="locationFilter">
+                        <option value="all">All Locations</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Gurugram">Gurugram</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Kochi">Kochi</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <label for="sortFilter">Sort By:</label>
+                    <select id="sortFilter">
+                        <option value="name-asc">Name (A to Z)</option>
+                        <option value="name-desc">Name (Z to A)</option>
+                        <option value="dept">Department</option>
+                    </select>
+                </div>
+
+                <button type="button" id="resetBtn" class="btn-reset">Reset</button>
+            </div>
+        </section>
+
+        <div class="result-info">
+            <p id="employeeCount" aria-live="polite" role="status">Showing 0 employees</p>
+        </div>
+
+        <div id="messageBox" class="message-box" role="status" aria-live="polite" style="display: none;"></div>
+
+        <section id="employeeList" class="card-grid">
+            <!-- Cards will be added here using JavaScript -->
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Indian Workforce Directory. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
