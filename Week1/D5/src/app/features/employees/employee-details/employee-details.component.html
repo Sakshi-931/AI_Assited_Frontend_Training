@@ -1,0 +1,74 @@
+<div class="details-container">
+  <div class="nav-bar">
+    <a routerLink="/employees" class="back-link">
+      &larr; Back to Employee Directory
+    </a>
+  </div>
+
+  @if (loading()) {
+    <div class="not-found-card" role="status">
+      <p>Loading employee record from database...</p>
+    </div>
+  } @else if (employee(); as emp) {
+    <article #detailsCard class="details-card">
+      <header class="profile-header">
+        <div class="profile-avatar" aria-hidden="true">
+          {{ emp.name.charAt(0) }}
+        </div>
+        <div class="profile-title-group">
+          <div class="id-badge">Employee ID: #{{ emp.id }}</div>
+          <h2 class="profile-name">{{ emp.name }}</h2>
+          <p class="profile-designation">{{ emp.designation }}</p>
+        </div>
+      </header>
+
+      <section class="info-section">
+        <h3 class="section-title">Employment Information</h3>
+        <dl class="details-grid">
+          <div class="detail-item">
+            <dt class="detail-label">Department</dt>
+            <dd class="detail-value">
+              <span class="dept-badge">{{ emp.department | uppercase }}</span>
+            </dd>
+          </div>
+
+          <div class="detail-item">
+            <dt class="detail-label">Email Address</dt>
+            <dd class="detail-value">
+              <a [href]="'mailto:' + emp.email" class="email-link">
+                {{ emp.email }}
+              </a>
+            </dd>
+          </div>
+
+          <div class="detail-item">
+            <dt class="detail-label">Designation</dt>
+            <dd class="detail-value">{{ emp.designation }}</dd>
+          </div>
+
+          <div class="detail-item">
+            <dt class="detail-label">Annual Salary</dt>
+            <dd class="detail-value salary-highlight">
+              {{ emp.salary | currency:'INR':'symbol':'1.0-0' }}
+            </dd>
+          </div>
+
+          <div class="detail-item">
+            <dt class="detail-label">Date of Joining</dt>
+            <dd class="detail-value">
+              {{ emp.joiningDate | date:'longDate' }} ({{ emp.joiningDate | date:'dd MMM yyyy' }})
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </article>
+  } @else {
+    <div class="not-found-card" role="alert">
+      <h2>Employee Not Found</h2>
+      <p>The requested employee record does not exist or may have been removed.</p>
+      <a routerLink="/employees" class="primary-btn">
+        Return to Employee Directory
+      </a>
+    </div>
+  }
+</div>

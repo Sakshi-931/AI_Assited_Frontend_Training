@@ -1,0 +1,82 @@
+:host {
+  transition: background-color 0.15s ease-in-out;
+}
+
+:host:hover {
+  background-color: #f8fafc;
+}
+
+td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: middle;
+  font-size: 0.875rem;
+}
+
+.emp-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.emp-name {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.emp-email {
+  color: #475569;
+}
+
+.dept-tag {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.emp-role {
+  color: #64748b;
+}
+
+.emp-salary {
+  font-weight: 600;
+  color: #047857;
+  white-space: nowrap;
+}
+
+.emp-date {
+  color: #475569;
+  white-space: nowrap;
+}
+
+.emp-actions {
+  text-align: right;
+}
+
+.view-btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.view-btn:hover {
+  background-color: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.view-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

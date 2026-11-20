@@ -1,0 +1,238 @@
+{
+  "employees": [
+    {
+      "id": 101,
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@example.com",
+      "department": "Engineering",
+      "designation": "Senior Frontend Engineer",
+      "salary": 1250000,
+      "joiningDate": "2022-03-15"
+    },
+    {
+      "id": 102,
+      "name": "Priya Patel",
+      "email": "priya.patel@example.com",
+      "department": "Design",
+      "designation": "Lead Product Designer",
+      "salary": 1100000,
+      "joiningDate": "2021-07-01"
+    },
+    {
+      "id": 103,
+      "name": "Rohan Kulkarni",
+      "email": "rohan.kulkarni@example.com",
+      "department": "Engineering",
+      "designation": "Full Stack Developer",
+      "salary": 850000,
+      "joiningDate": "2023-02-10"
+    },
+    {
+      "id": 104,
+      "name": "Ananya Iyer",
+      "email": "ananya.iyer@example.com",
+      "department": "Human Resources",
+      "designation": "HR Operations Specialist",
+      "salary": 650000,
+      "joiningDate": "2024-01-20"
+    },
+    {
+      "id": 105,
+      "name": "Vikramaditya Sengupta",
+      "email": "vikramaditya.sengupta@example.com",
+      "department": "Product Management",
+      "designation": "Principal Product Manager",
+      "salary": 1600000,
+      "joiningDate": "2020-09-18"
+    },
+    {
+      "id": 106,
+      "name": "Neha Verma",
+      "email": "neha.verma@example.com",
+      "department": "Quality Assurance",
+      "designation": "Automation QA Engineer",
+      "salary": 720000,
+      "joiningDate": "2023-11-05"
+    },
+    {
+      "id": 107,
+      "name": "Aditya Rao",
+      "email": "aditya.rao@example.com",
+      "department": "Engineering",
+      "designation": "Backend Architect",
+      "salary": 1550000,
+      "joiningDate": "2021-01-11"
+    },
+    {
+      "id": 108,
+      "name": "Meera Nambiar",
+      "email": "meera.nambiar@example.com",
+      "department": "Design",
+      "designation": "UI/UX Researcher",
+      "salary": 920000,
+      "joiningDate": "2023-05-18"
+    },
+    {
+      "id": 109,
+      "name": "Siddharth Malhotra",
+      "email": "siddharth.m@example.com",
+      "department": "Marketing",
+      "designation": "Growth Marketing Lead",
+      "salary": 1050000,
+      "joiningDate": "2022-08-01"
+    },
+    {
+      "id": 110,
+      "name": "Kavita Nair",
+      "email": "kavita.nair@example.com",
+      "department": "Finance",
+      "designation": "Senior Financial Analyst",
+      "salary": 980000,
+      "joiningDate": "2022-11-14"
+    },
+    {
+      "id": 111,
+      "name": "Arjun Deshmukh",
+      "email": "arjun.deshmukh@example.com",
+      "department": "Engineering",
+      "designation": "DevOps Engineer",
+      "salary": 1150000,
+      "joiningDate": "2023-04-03"
+    },
+    {
+      "id": 112,
+      "name": "Tanvi Joshi",
+      "email": "tanvi.joshi@example.com",
+      "department": "Human Resources",
+      "designation": "Talent Acquisition Lead",
+      "salary": 820000,
+      "joiningDate": "2021-09-22"
+    },
+    {
+      "id": 113,
+      "name": "Deepak Choudhary",
+      "email": "deepak.c@example.com",
+      "department": "Quality Assurance",
+      "designation": "SDET II",
+      "salary": 880000,
+      "joiningDate": "2022-06-15"
+    },
+    {
+      "id": 114,
+      "name": "Shweta Menon",
+      "email": "shweta.menon@example.com",
+      "department": "Product Management",
+      "designation": "Technical Product Manager",
+      "salary": 1350000,
+      "joiningDate": "2021-12-01"
+    },
+    {
+      "id": 115,
+      "name": "Gaurav Bansal",
+      "email": "gaurav.bansal@example.com",
+      "department": "Engineering",
+      "designation": "Cloud Infrastructure Lead",
+      "salary": 1450000,
+      "joiningDate": "2020-04-15"
+    },
+    {
+      "id": 116,
+      "name": "Ishita Chatterjee",
+      "email": "ishita.c@example.com",
+      "department": "Design",
+      "designation": "Visual Designer",
+      "salary": 780000,
+      "joiningDate": "2024-02-01"
+    },
+    {
+      "id": 117,
+      "name": "Manish Reddy",
+      "email": "manish.reddy@example.com",
+      "department": "Finance",
+      "designation": "Accounts Manager",
+      "salary": 910000,
+      "joiningDate": "2023-08-10"
+    },
+    {
+      "id": 118,
+      "name": "Pooja Hegde",
+      "email": "pooja.hegde@example.com",
+      "department": "Marketing",
+      "designation": "Content Strategist",
+      "salary": 750000,
+      "joiningDate": "2023-10-16"
+    },
+    {
+      "id": 119,
+      "name": "Varun Saxena",
+      "email": "varun.saxena@example.com",
+      "department": "Engineering",
+      "designation": "Security Engineer",
+      "salary": 1280000,
+      "joiningDate": "2022-01-25"
+    },
+    {
+      "id": 120,
+      "name": "Ritu Singhal",
+      "email": "ritu.singhal@example.com",
+      "department": "Quality Assurance",
+      "designation": "Performance Test Specialist",
+      "salary": 860000,
+      "joiningDate": "2023-03-20"
+    },
+    {
+      "id": 121,
+      "name": "Karthik Subramanian",
+      "email": "karthik.s@example.com",
+      "department": "Engineering",
+      "designation": "Mobile App Developer (Flutter)",
+      "salary": 1020000,
+      "joiningDate": "2022-05-12"
+    },
+    {
+      "id": 122,
+      "name": "Divya Pillai",
+      "email": "divya.pillai@example.com",
+      "department": "Human Resources",
+      "designation": "People Partner",
+      "salary": 740000,
+      "joiningDate": "2023-09-04"
+    },
+    {
+      "id": 123,
+      "name": "Abhishek Mukherjee",
+      "email": "abhishek.m@example.com",
+      "department": "Engineering",
+      "designation": "Data Engineer",
+      "salary": 1180000,
+      "joiningDate": "2021-10-18"
+    },
+    {
+      "id": 124,
+      "name": "Sneha Ranganathan",
+      "email": "sneha.r@example.com",
+      "department": "Design",
+      "designation": "Motion Graphics Designer",
+      "salary": 830000,
+      "joiningDate": "2023-07-28"
+    },
+    {
+      "id": 125,
+      "name": "Naveen Bhatia",
+      "email": "naveen.bhatia@example.com",
+      "department": "Product Management",
+      "designation": "Associate Product Manager",
+      "salary": 950000,
+      "joiningDate": "2024-03-01"
+    },
+    {
+      "id": 126,
+      "name": "Pallavi Trivedi",
+      "email": "pallavi.trivedi@example.com",
+      "department": "Finance",
+      "designation": "Payroll Specialist",
+      "salary": 680000,
+      "joiningDate": "2023-12-11"
+    }
+  ]
+}

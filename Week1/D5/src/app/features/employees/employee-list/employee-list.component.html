@@ -1,0 +1,86 @@
+<section class="employee-list-section" aria-labelledby="section-heading">
+  <div class="list-header">
+    <div>
+      <h2 id="section-heading" class="section-title">Employees Directory</h2>
+      <p class="section-subtitle">
+        Manage and view active team members (Total: {{ employees().length }} | Rendered items: {{ renderedCount() }})
+      </p>
+    </div>
+
+    <div class="view-controls" role="group" aria-label="View format toggle">
+      <button
+        type="button"
+        class="toggle-btn"
+        [class.active]="viewMode() === 'card'"
+        (click)="setViewMode('card')"
+        [attr.aria-pressed]="viewMode() === 'card'"
+      >
+        Card View
+      </button>
+      <button
+        type="button"
+        class="toggle-btn"
+        [class.active]="viewMode() === 'row'"
+        (click)="setViewMode('row')"
+        [attr.aria-pressed]="viewMode() === 'row'"
+      >
+        Table View
+      </button>
+    </div>
+  </div>
+
+  @if (loading()) {
+    <div class="loading-state" role="status">
+      <p>Loading employees from database...</p>
+    </div>
+  } @else if (errorMessage(); as error) {
+    <div class="error-state" role="alert">
+      <h3>Database Connection Notice</h3>
+      <p>{{ error }}</p>
+      <button type="button" class="retry-btn" (click)="loadEmployees()">Retry Connection</button>
+    </div>
+  } @else if (employees().length === 0) {
+    <div class="empty-state" role="status">
+      <p>No employees found in database.</p>
+    </div>
+  } @else {
+    <div class="list-content">
+      @if (viewMode() === 'card') {
+        <div class="cards-grid">
+          @for (emp of employees(); track emp.id) {
+            <app-employee-card
+              [employee]="emp"
+              (viewDetails)="navigateToDetails($event)"
+            ></app-employee-card>
+          }
+        </div>
+      } @else {
+        <div #tableContainer class="table-container">
+          <table class="employees-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Joined</th>
+                <th class="actions-header">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (emp of employees(); track emp.id) {
+                <tr
+                  app-employee-row
+                  [employee]="emp"
+                  (viewDetails)="navigateToDetails($event)"
+                ></tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    </div>
+  }
+</section>

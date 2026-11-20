@@ -1,0 +1,19 @@
+<td class="emp-id">{{ employee.id }}</td>
+<td class="emp-name">{{ employee.name }}</td>
+<td class="emp-email">{{ employee.email }}</td>
+<td class="emp-dept">
+  <span class="dept-tag">{{ employee.department | uppercase }}</span>
+</td>
+<td class="emp-role">{{ employee.designation }}</td>
+<td class="emp-salary">{{ employee.salary | currency:'INR':'symbol':'1.0-0' }}</td>
+<td class="emp-date">{{ employee.joiningDate | date:'dd MMM yyyy' }}</td>
+<td class="emp-actions">
+  <button
+    type="button"
+    class="view-btn"
+    (click)="onViewClick()"
+    [attr.aria-label]="'View details for ' + employee.name"
+  >
+    View Details
+  </button>
+</td>
