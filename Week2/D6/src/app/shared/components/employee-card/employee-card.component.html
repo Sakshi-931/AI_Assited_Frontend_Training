@@ -1,0 +1,50 @@
+<article class="employee-card" appHighlight>
+  <div class="card-header">
+    <div class="avatar-initial">
+      {{ employee.name.charAt(0) }}
+    </div>
+    <div class="header-info">
+      <span class="emp-id">#{{ employee.id }}</span>
+      <h3 class="emp-name">{{ employee.name }}</h3>
+      <p class="emp-designation">{{ employee.designation }}</p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="info-row">
+      <span class="info-label">Department</span>
+      <span class="department-badge">{{ employee.department | uppercase }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Email</span>
+      <span class="emp-email" [title]="employee.email">{{ employee.email }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Salary</span>
+      <span class="emp-salary">{{ employee.salary | currency:'INR':'symbol':'1.0-0' }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Joined</span>
+      <span class="emp-date">{{ employee.joiningDate | date:'dd MMM yyyy' }}</span>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <button
+      type="button"
+      class="details-btn"
+      (click)="onViewClick()"
+      [attr.aria-label]="'View details for ' + employee.name"
+    >
+      View Details
+    </button>
+    <button
+      type="button"
+      class="delete-btn"
+      (click)="onDeleteClick()"
+      [attr.aria-label]="'Delete ' + employee.name"
+    >
+      Delete
+    </button>
+  </div>
+</article>
