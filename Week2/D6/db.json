@@ -224,15 +224,6 @@
       "designation": "Associate Product Manager",
       "salary": 950000,
       "joiningDate": "2024-03-01"
-    },
-    {
-      "id": 126,
-      "name": "Pallavi Trivedi",
-      "email": "pallavi.trivedi@example.com",
-      "department": "Finance",
-      "designation": "Payroll Specialist",
-      "salary": 680000,
-      "joiningDate": "2023-12-11"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
