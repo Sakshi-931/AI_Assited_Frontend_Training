@@ -1,0 +1,166 @@
+/* ==========================================================================
+   CSS Design Tokens & Variables (No SCSS / No External Frameworks)
+   ========================================================================== */
+:root {
+  /* Brand Colors */
+  --color-primary: #1e3a8a;          /* Deep navy blue */
+  --color-primary-light: #3b82f6;    /* Vibrant blue */
+  --color-primary-subtle: #eff6ff;   /* Soft blue tint */
+  --color-primary-hover: #1d4ed8;
+
+  /* Neutral & Surface Colors */
+  --color-bg-app: #f8fafc;           /* App background slate-50 */
+  --color-bg-card: #ffffff;          /* Card surface */
+  --color-bg-sidebar: #0f172a;       /* Dark sidebar slate-900 */
+  --color-bg-sidebar-hover: #1e293b; /* Sidebar active/hover */
+  --color-border: #e2e8f0;          /* Border slate-200 */
+  --color-border-subtle: #f1f5f9;
+
+  /* Typography Colors */
+  --color-text-main: #0f172a;        /* High-contrast slate-900 */
+  --color-text-secondary: #475569;   /* Muted text slate-600 */
+  --color-text-light: #94a3b8;       /* Subtle text slate-400 */
+  --color-text-inverse: #ffffff;     /* White on dark */
+
+  /* Status Colors */
+  --color-status-present-bg: #dcfce7;
+  --color-status-present-text: #15803d;
+  --color-status-late-bg: #fef9c3;
+  --color-status-late-text: #a16207;
+  --color-status-absent-bg: #fee2e2;
+  --color-status-absent-text: #b91c1c;
+  --color-status-leave-bg: #f3e8ff;
+  --color-status-leave-text: #7e22ce;
+
+  /* Dimensions */
+  --topbar-height: 64px;
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 0px;
+
+  /* Elevation / Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.25s ease-in-out;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-bg-app);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-main);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Accessibility: Focus outlines */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Custom Lightweight Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Mobile Touch Target Standards */
+button, a {
+  touch-action: manipulation;
+}
+
+/* ==========================================================================
+   Shared Status Badges (Used by StatusBadgeDirective across pages)
+   ========================================================================== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  line-height: 1;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+
+.badge-present {
+  background-color: var(--color-status-present-bg);
+  color: var(--color-status-present-text);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.badge-late {
+  background-color: var(--color-status-late-bg);
+  color: var(--color-status-late-text);
+  border: 1px solid rgba(161, 98, 7, 0.2);
+}
+
+.badge-absent {
+  background-color: var(--color-status-absent-bg);
+  color: var(--color-status-absent-text);
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.badge-leave {
+  background-color: var(--color-status-leave-bg);
+  color: var(--color-status-leave-text);
+  border: 1px solid rgba(126, 34, 206, 0.2);
+}
+

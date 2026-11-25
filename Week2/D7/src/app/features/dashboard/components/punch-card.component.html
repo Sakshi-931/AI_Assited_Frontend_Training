@@ -1,0 +1,46 @@
+<div class="card punch-summary-card">
+  <div class="card-header">
+    <div class="title-with-icon">
+      <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <h2 class="card-title">Today's Attendance</h2>
+    </div>
+
+    @if (punch(); as p) {
+      <!-- Custom Status Directive applying dynamic badge styles -->
+      <span [appStatusBadge]="p.status">{{ p.status }}</span>
+    }
+  </div>
+
+  <div class="card-body">
+    @if (punch(); as p) {
+      <div class="punch-metrics-grid">
+        <div class="metric-box">
+          <span class="metric-label">Punch In</span>
+          <span class="metric-value in">{{ p.punchIn }}</span>
+        </div>
+
+        <div class="metric-box">
+          <span class="metric-label">Punch Out</span>
+          <span class="metric-value out">{{ p.punchOut }}</span>
+        </div>
+
+        <div class="metric-box">
+          <span class="metric-label">Working Hours</span>
+          <span class="metric-value hours">{{ p.workingHours }}</span>
+        </div>
+
+        <div class="metric-box">
+          <span class="metric-label">Status</span>
+          <span class="metric-value">{{ p.status }}</span>
+        </div>
+      </div>
+    } @else {
+      <div class="empty-punch-state">
+        <p>No punch record available for today.</p>
+      </div>
+    }
+  </div>
+</div>

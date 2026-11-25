@@ -1,0 +1,26 @@
+<article class="card policy-card">
+  <div class="card-header">
+    <div class="header-main">
+      <span class="category-pill" [class]="'cat-' + policy().category.toLowerCase().replace(' & ', '-').replace(' ', '-')">
+        {{ policy().category }}
+      </span>
+      <h2 class="policy-title">{{ policy().title }}</h2>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="policy-description">{{ policy().description }}</p>
+  </div>
+
+  <div class="card-footer">
+    <div class="footer-meta">
+      <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      <span class="updated-text">
+        Updated {{ policy().lastUpdated | date:'dd MMM yyyy' }}
+      </span>
+    </div>
+  </div>
+</article>

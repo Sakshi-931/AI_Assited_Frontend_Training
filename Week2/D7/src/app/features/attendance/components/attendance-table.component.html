@@ -1,0 +1,40 @@
+<div class="table-container">
+  <div class="table-scroll-wrapper">
+    <table class="attendance-table" aria-label="Employee Attendance Records">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Day</th>
+          <th scope="col">Punch In</th>
+          <th scope="col">Punch Out</th>
+          <th scope="col">Working Hours</th>
+          <th scope="col" class="text-center">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (record of records(); track record.id) {
+          <tr class="table-row">
+            <td class="date-cell">
+              <span class="formatted-date">{{ record.date | date:'dd MMM yyyy' }}</span>
+            </td>
+            <td class="day-cell">{{ record.day }}</td>
+            <td class="punch-cell in-time">{{ record.punchIn }}</td>
+            <td class="punch-cell out-time">{{ record.punchOut }}</td>
+            <td class="hours-cell font-mono">{{ record.workingHours }}</td>
+            <td class="status-cell text-center">
+              <span [appStatusBadge]="record.status">{{ record.status }}</span>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="6" class="empty-table-cell">
+              <div class="empty-state-inner">
+                <p>No attendance records found for this period.</p>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

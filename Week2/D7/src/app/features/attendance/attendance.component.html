@@ -1,0 +1,48 @@
+<div class="attendance-page">
+  <header class="page-header">
+    <div class="header-titles">
+      <h1 class="page-title">Attendance History</h1>
+      <p class="page-subtitle">Historical records of daily logins, logged hours, and presence records</p>
+    </div>
+    <button type="button" class="refresh-btn" (click)="loadData()" aria-label="Refresh attendance logs">
+      <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M23 4v6h-6M1 20v-6h6"></path>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+      </svg>
+      Refresh
+    </button>
+  </header>
+
+  <!-- Error State Alert -->
+  @if (errorMessage(); as error) {
+    <app-error-state [message]="error" (retry)="loadData()"></app-error-state>
+  }
+
+  <!-- Quick Statistics Summary Bar -->
+  <div class="stats-overview-grid">
+    <div class="stat-card">
+      <span class="stat-label">Total Logged Days</span>
+      <span class="stat-value">{{ totalDays() }}</span>
+    </div>
+    <div class="stat-card stat-present">
+      <span class="stat-label">Present</span>
+      <span class="stat-value">{{ presentDays() }}</span>
+    </div>
+    <div class="stat-card stat-late">
+      <span class="stat-label">Late Arrivals</span>
+      <span class="stat-value">{{ lateDays() }}</span>
+    </div>
+    <div class="stat-card stat-leave">
+      <span class="stat-label">Approved Leaves</span>
+      <span class="stat-value">{{ leaveDays() }}</span>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  @if (isLoading() && records().length === 0) {
+    <app-loading-state message="Fetching monthly attendance records..."></app-loading-state>
+  } @else {
+    <!-- Reusable Responsive Attendance Table -->
+    <app-attendance-table [records]="records()"></app-attendance-table>
+  }
+</div>

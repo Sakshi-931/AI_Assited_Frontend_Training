@@ -1,0 +1,38 @@
+<div class="profile-page">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">My Profile</h1>
+      <p class="page-subtitle">View and verify your registered employee details and dependent records</p>
+    </div>
+    <button type="button" class="refresh-btn" (click)="loadProfile()" aria-label="Refresh employee profile">
+      <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M23 4v6h-6M1 20v-6h6"></path>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+      </svg>
+      Refresh
+    </button>
+  </header>
+
+  <!-- Error State Alert -->
+  @if (errorMessage(); as error) {
+    <app-error-state [message]="error" (retry)="loadProfile()"></app-error-state>
+  }
+
+  <!-- Loading State -->
+  @if (isLoading() && !employee()) {
+    <app-loading-state message="Fetching personal and family records..."></app-loading-state>
+  } @else if (employee(); as emp) {
+    <div class="profile-layout-grid">
+      <!-- Left / Main Column: Personal Details Card -->
+      <section class="personal-section">
+        <app-personal-details [employee]="emp"></app-personal-details>
+      </section>
+
+      <!-- Right Column: Emergency Contacts and Family Information -->
+      <section class="side-sections">
+        <app-emergency-contact [contacts]="emergencyContacts()"></app-emergency-contact>
+        <app-family-info [family]="familyInfo()"></app-family-info>
+      </section>
+    </div>
+  }
+</div>

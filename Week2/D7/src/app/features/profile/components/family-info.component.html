@@ -1,0 +1,37 @@
+<div class="card family-card">
+  <div class="card-header">
+    <div class="header-icon-title">
+      <svg class="header-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+      <div>
+        <h2 class="card-title">Family Information</h2>
+        <p class="card-subtitle">Dependents and immediate family record</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    @if (family().length === 0) {
+      <p class="empty-note">No family information recorded.</p>
+    } @else {
+      <div class="family-list">
+        @for (member of family(); track member.id) {
+          <div class="family-entry">
+            <div class="family-top">
+              <span class="member-name">{{ member.name }}</span>
+              <span class="relation-badge">{{ member.relationship }}</span>
+            </div>
+            <div class="family-meta">
+              <span class="meta-label">Phone:</span>
+              <span class="meta-value">{{ member.phone }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

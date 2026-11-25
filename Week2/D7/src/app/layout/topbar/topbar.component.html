@@ -1,0 +1,36 @@
+<header class="topbar">
+  <div class="topbar-left">
+    <button
+      type="button"
+      class="hamburger-btn"
+      (click)="toggleSidebar()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="isSidebarOpen()">
+      <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <div class="brand">
+      <div class="brand-logo">ES</div>
+      <span class="brand-name">EduSphere</span>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    @if (currentEmployee(); as emp) {
+      <div class="user-profile">
+        <img [src]="emp.avatarUrl" [alt]="emp.name" class="user-avatar" />
+        <div class="user-details">
+          <span class="user-name">{{ emp.name }}</span>
+          <span class="user-role">{{ emp.role }}</span>
+        </div>
+      </div>
+    } @else {
+      <div class="user-details-loading">
+        <span class="user-name">Loading...</span>
+      </div>
+    }
+  </div>
+</header>

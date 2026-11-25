@@ -1,0 +1,59 @@
+<div class="card personal-details-card">
+  <div class="card-header">
+    <div class="header-content">
+      <h2 class="card-title">Personal Details</h2>
+      <p class="card-subtitle">Primary employee profile and identification</p>
+    </div>
+    <span class="id-pill">{{ employee().id }}</span>
+  </div>
+
+  <div class="card-body">
+    <div class="avatar-section">
+      <img
+        [src]="employee().avatarUrl"
+        [alt]="employee().name"
+        class="profile-avatar" />
+      <div class="avatar-meta">
+        <h3 class="employee-name">{{ employee().name }}</h3>
+        <span class="employee-role">{{ employee().role }}</span>
+      </div>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="detail-label">Email Address</span>
+        <span class="detail-value link-text">{{ employee().email }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Contact Number</span>
+        <span class="detail-value">{{ employee().phone }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Date of Birth</span>
+        <span class="detail-value">{{ employee().dob | date:'dd MMM yyyy' }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Gender</span>
+        <span class="detail-value">{{ employee().gender }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Blood Group</span>
+        <span class="detail-value blood-badge">{{ employee().bloodGroup }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-label">Joining Date</span>
+        <span class="detail-value">{{ employee().joiningDate | date:'dd MMM yyyy' }}</span>
+      </div>
+
+      <div class="detail-item full-width">
+        <span class="detail-label">Residential Address</span>
+        <span class="detail-value address-text">{{ employee().address }}</span>
+      </div>
+    </div>
+  </div>
+</div>

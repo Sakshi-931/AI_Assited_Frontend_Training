@@ -1,0 +1,25 @@
+<div class="shell-layout">
+  <!-- Reusable Topbar Header -->
+  <app-topbar></app-topbar>
+
+  <div class="shell-body">
+    <!-- Responsive Collapsible Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Mobile Backdrop for off-canvas drawer -->
+    @if (isSidebarOpen()) {
+      <div 
+        class="sidebar-backdrop" 
+        (click)="closeSidebarOnBackdrop()"
+        aria-hidden="true">
+      </div>
+    }
+
+    <!-- Main Content Area with Router Outlet -->
+    <main class="main-content" [class.sidebar-expanded]="isSidebarOpen()">
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>

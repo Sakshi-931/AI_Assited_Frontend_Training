@@ -1,0 +1,177 @@
+{
+  "employees": [
+    {
+      "id": "EMP001",
+      "name": "Sakshi Khankar",
+      "role": "Frontend Developer",
+      "email": "sakshi.khankar@edusphere.internal",
+      "phone": "+91 98765 43210",
+      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=SakshiKhankar&backgroundColor=b6e3f4",
+      "joiningDate": "2025-01-10",
+      "bloodGroup": "O+",
+      "gender": "Female",
+      "dob": "1999-05-14",
+      "address": "Flat 402, Tech Park Residency, Hinjawadi Phase 1, Pune, Maharashtra 411057"
+    }
+  ],
+  "emergencyContacts": [
+    {
+      "id": "EMG-001",
+      "employeeId": "EMP001",
+      "name": "Ramesh Khankar",
+      "relationship": "Father",
+      "phone": "+91 98765 00001",
+      "address": "Same as permanent residence"
+    },
+    {
+      "id": "EMG-002",
+      "employeeId": "EMP001",
+      "name": "Aakash Khankar",
+      "relationship": "Brother",
+      "phone": "+91 98765 00003",
+      "address": "Kothrud, Pune, Maharashtra"
+    }
+  ],
+  "familyInformation": [
+    {
+      "id": "FAM-001",
+      "employeeId": "EMP001",
+      "name": "Sunita Khankar",
+      "relationship": "Mother",
+      "phone": "+91 98765 00002"
+    },
+    {
+      "id": "FAM-002",
+      "employeeId": "EMP001",
+      "name": "Ramesh Khankar",
+      "relationship": "Father",
+      "phone": "+91 98765 00001"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "ATT-001",
+      "employeeId": "EMP001",
+      "date": "2025-01-24",
+      "day": "Friday",
+      "punchIn": "09:10 AM",
+      "punchOut": "06:05 PM",
+      "workingHours": "08h 55m",
+      "status": "Present"
+    },
+    {
+      "id": "ATT-002",
+      "employeeId": "EMP001",
+      "date": "2025-01-23",
+      "day": "Thursday",
+      "punchIn": "09:20 AM",
+      "punchOut": "06:10 PM",
+      "workingHours": "08h 50m",
+      "status": "Present"
+    },
+    {
+      "id": "ATT-003",
+      "employeeId": "EMP001",
+      "date": "2025-01-22",
+      "day": "Wednesday",
+      "punchIn": "09:35 AM",
+      "punchOut": "06:00 PM",
+      "workingHours": "08h 25m",
+      "status": "Late"
+    },
+    {
+      "id": "ATT-004",
+      "employeeId": "EMP001",
+      "date": "2025-01-21",
+      "day": "Tuesday",
+      "punchIn": "09:05 AM",
+      "punchOut": "06:02 PM",
+      "workingHours": "08h 57m",
+      "status": "Present"
+    },
+    {
+      "id": "ATT-005",
+      "employeeId": "EMP001",
+      "date": "2025-01-20",
+      "day": "Monday",
+      "punchIn": "09:12 AM",
+      "punchOut": "06:15 PM",
+      "workingHours": "09h 03m",
+      "status": "Present"
+    },
+    {
+      "id": "ATT-006",
+      "employeeId": "EMP001",
+      "date": "2025-01-17",
+      "day": "Friday",
+      "punchIn": "-",
+      "punchOut": "-",
+      "workingHours": "00h 00m",
+      "status": "Leave"
+    },
+    {
+      "id": "ATT-007",
+      "employeeId": "EMP001",
+      "date": "2025-01-16",
+      "day": "Thursday",
+      "punchIn": "09:45 AM",
+      "punchOut": "05:50 PM",
+      "workingHours": "08h 05m",
+      "status": "Late"
+    },
+    {
+      "id": "ATT-008",
+      "employeeId": "EMP001",
+      "date": "2025-01-15",
+      "day": "Wednesday",
+      "punchIn": "09:15 AM",
+      "punchOut": "06:10 PM",
+      "workingHours": "08h 55m",
+      "status": "Present"
+    }
+  ],
+  "policies": [
+    {
+      "id": "POL-001",
+      "title": "Work From Home Policy",
+      "category": "Workplace",
+      "description": "Employees are eligible for up to two remote work days per week upon manager approval. Secure VPN access and adherence to core communication hours (10:00 AM - 05:00 PM) are mandatory.",
+      "lastUpdated": "2025-01-05"
+    },
+    {
+      "id": "POL-002",
+      "title": "Annual & Sick Leave Policy",
+      "category": "Benefits & Leave",
+      "description": "Full-time team members accrue 18 days of paid annual leave and 12 days of sick/casual leave per calendar year. Leaves must be requested at least 48 hours in advance through the employee portal.",
+      "lastUpdated": "2025-01-01"
+    },
+    {
+      "id": "POL-003",
+      "title": "Attendance & Punctuality Policy",
+      "category": "Workplace",
+      "description": "Standard working hours require 8 hours and 30 minutes of logged shift time. Logins past 09:30 AM are marked as 'Late'. Multiple consecutive late arrivals require HR review.",
+      "lastUpdated": "2025-01-08"
+    },
+    {
+      "id": "POL-004",
+      "title": "IT Security & Acceptable Use Policy",
+      "category": "Compliance & IT",
+      "description": "Company equipment must never be used for unauthorized commercial activities. Passwords must comply with complexity rules, and multi-factor authentication is required across all internal tooling.",
+      "lastUpdated": "2024-12-15"
+    },
+    {
+      "id": "POL-005",
+      "title": "Code of Professional Conduct",
+      "category": "General",
+      "description": "EduSphere promotes an inclusive, respectful, and harassment-free working environment. Professional integrity, collaborative communication, and confidentiality of company IP are strictly upheld.",
+      "lastUpdated": "2024-11-20"
+    },
+    {
+      "id": "POL-006",
+      "title": "Health & Workplace Ergonomics",
+      "category": "General",
+      "description": "Guidance on maintaining healthy posture, eye-strain relief breaks, and reimbursement options for ergonomic accessories such as keyboards, monitor stands, and supportive seating.",
+      "lastUpdated": "2025-01-12"
+    }
+  ]
+}

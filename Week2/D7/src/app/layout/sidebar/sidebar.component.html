@@ -1,0 +1,29 @@
+<aside class="sidebar" [class.collapsed]="!isSidebarOpen()" aria-label="Sidebar Navigation">
+  <div class="sidebar-header">
+    <span class="nav-section-title">Navigation Menu</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      @for (item of navItems; track item.route) {
+        <li class="nav-item">
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="handleLinkClick()"
+            class="nav-link">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path [attr.d]="item.iconSvg" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <span class="nav-label">{{ item.label }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="version-badge">v1.0.0 &bull; Angular 21</div>
+  </div>
+</aside>

@@ -1,0 +1,38 @@
+<div class="card employee-summary-card">
+  <div class="card-header">
+    <h2 class="card-title">Employee Information</h2>
+    <span class="badge-role">{{ employee().role }}</span>
+  </div>
+
+  <div class="card-body">
+    <div class="profile-media">
+      <img
+        [src]="employee().avatarUrl"
+        [alt]="employee().name"
+        class="profile-image" />
+    </div>
+
+    <div class="profile-info-grid">
+      <div class="info-group">
+        <span class="info-label">Full Name</span>
+        <span class="info-value highlight">{{ employee().name }}</span>
+      </div>
+
+      <div class="info-group">
+        <span class="info-label">Employee ID</span>
+        <span class="info-value id-badge">{{ employee().id }}</span>
+      </div>
+
+      <div class="info-group">
+        <span class="info-label">Designation</span>
+        <span class="info-value">{{ employee().role }}</span>
+      </div>
+
+      <div class="info-group">
+        <span class="info-label">Joining Date</span>
+        <!-- Built-in Angular DatePipe for format standardisation -->
+        <span class="info-value">{{ employee().joiningDate | date:'dd MMM yyyy' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
