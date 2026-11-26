@@ -1,4 +1,4 @@
-export type AttendanceStatus = 'Present' | 'Late' | 'Absent' | 'Leave';
+export type AttendanceStatus = 'Present' | 'Late' | 'Absent' | 'Leave' | 'Not Marked';
 
 export interface AttendanceRecord {
   id: string;
@@ -12,9 +12,12 @@ export interface AttendanceRecord {
 }
 
 export interface TodayPunch {
+  id?: string;
   punchIn: string;
   punchOut: string;
   status: AttendanceStatus;
   workingHours: string;
+  canPunchIn: boolean;
+  canPunchOut: boolean;
+  isCompleted: boolean;
 }
-

@@ -26,7 +26,7 @@
 .header-icon {
   width: 22px;
   height: 22px;
-  color: var(--color-primary);
+  color: #5b54d6;
 }
 
 .card-title {
@@ -74,18 +74,76 @@
 }
 
 .metric-value.hours {
-  color: var(--color-primary);
+  color: #5b54d6;
 }
 
-.empty-punch-state {
-  padding: 2rem 1rem;
-  text-align: center;
-  color: var(--color-text-secondary);
+/* Single Punch Action Button Styling */
+.punch-action-row {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.punch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
   font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+/* Vibrant Green for Punch In */
+.punch-in-btn {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+}
+
+.punch-in-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.45);
+}
+
+/* Warm Coral-Red for Punch Out */
+.punch-out-btn {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
+}
+
+.punch-out-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.45);
+}
+
+/* Completed Shift Disabled State */
+.punch-done-btn {
+  background-color: #f1f5f9;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  cursor: default;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
 }
 
 @media (max-width: 640px) {
   .punch-metrics-grid {
     grid-template-columns: 1fr;
+  }
+
+  .punch-btn {
+    width: 100%;
   }
 }

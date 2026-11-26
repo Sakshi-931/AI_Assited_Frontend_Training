@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit, computed } from '@angular/core';
 import { EmployeeService } from '../../core/services/employee.service';
 import { AttendanceService } from '../../core/services/attendance.service';
+import { AuthService } from '../../core/services/auth.service';
 import { EmployeeCardComponent } from './components/employee-card.component';
 import { PunchCardComponent } from './components/punch-card.component';
 import { LoadingStateComponent } from '../../shared/components/loading-state.component';
@@ -22,6 +23,7 @@ import { ErrorStateComponent } from '../../shared/components/error-state.compone
 export class DashboardComponent implements OnInit {
   private readonly employeeService = inject(EmployeeService);
   private readonly attendanceService = inject(AttendanceService);
+  private readonly authService = inject(AuthService);
 
   // Readonly signals exposed to template
   readonly employee = this.employeeService.employee;
@@ -41,7 +43,13 @@ export class DashboardComponent implements OnInit {
   }
 
   loadData(): void {
-    this.employeeService.loadEmployee('EMP001');
-    this.attendanceService.loadAttendance('EMP001');
+    const empId = this.authService.currentUser()?.employeeId || 'EMP001';
+    this.employeeService.loadEmployee(empId);
+    this.attendanceService.loadAttendance(empId);
+  }
+
+  handleTogglePunch(): void {
+    const empId = this.authService.currentUser()?.employeeId || 'EMP001';
+    this.attendanceService.togglePunch(empId);
   }
 }

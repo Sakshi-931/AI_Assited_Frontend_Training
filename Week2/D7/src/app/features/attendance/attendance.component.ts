@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit, computed } from '@angular/core';
 import { AttendanceService } from '../../core/services/attendance.service';
+import { AuthService } from '../../core/services/auth.service';
 import { AttendanceTableComponent } from './components/attendance-table.component';
 import { LoadingStateComponent } from '../../shared/components/loading-state.component';
 import { ErrorStateComponent } from '../../shared/components/error-state.component';
@@ -18,6 +19,7 @@ import { ErrorStateComponent } from '../../shared/components/error-state.compone
 })
 export class AttendanceComponent implements OnInit {
   protected readonly attendanceService = inject(AttendanceService);
+  protected readonly authService = inject(AuthService);
 
   readonly records = this.attendanceService.attendanceRecords;
   readonly isLoading = this.attendanceService.loading;
@@ -40,6 +42,7 @@ export class AttendanceComponent implements OnInit {
   }
 
   loadData(): void {
-    this.attendanceService.loadAttendance('EMP001');
+    const empId = this.authService.currentUser()?.employeeId || 'EMP001';
+    this.attendanceService.loadAttendance(empId);
   }
 }

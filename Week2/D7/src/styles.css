@@ -11,8 +11,8 @@
   /* Neutral & Surface Colors */
   --color-bg-app: #f8fafc;           /* App background slate-50 */
   --color-bg-card: #ffffff;          /* Card surface */
-  --color-bg-sidebar: #0f172a;       /* Dark sidebar slate-900 */
-  --color-bg-sidebar-hover: #1e293b; /* Sidebar active/hover */
+  --color-bg-sidebar: #5b54d6;       /* Vibrant royal purple/indigo matching reference image */
+  --color-bg-sidebar-hover: #4338ca; /* Deeper purple on hover */
   --color-border: #e2e8f0;          /* Border slate-200 */
   --color-border-subtle: #f1f5f9;
 
@@ -35,7 +35,7 @@
   /* Dimensions */
   --topbar-height: 64px;
   --sidebar-width: 250px;
-  --sidebar-collapsed-width: 0px;
+  --sidebar-collapsed-width: 70px;
 
   /* Elevation / Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -162,5 +162,11 @@ button, a {
   background-color: var(--color-status-leave-bg);
   color: var(--color-status-leave-text);
   border: 1px solid rgba(126, 34, 206, 0.2);
+}
+
+.badge-not-marked {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
 }
 

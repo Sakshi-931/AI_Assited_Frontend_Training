@@ -1,1 +1,5 @@
-<app-shell></app-shell>
+@if (authService.isAuthenticated()) {
+  <app-shell></app-shell>
+} @else {
+  <router-outlet></router-outlet>
+}

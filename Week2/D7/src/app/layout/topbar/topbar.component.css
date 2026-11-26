@@ -18,28 +18,6 @@
   gap: 1rem;
 }
 
-.hamburger-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  color: var(--color-text-main);
-  background: transparent;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.hamburger-btn:hover {
-  background-color: var(--color-primary-subtle);
-  color: var(--color-primary);
-}
-
-.hamburger-icon {
-  width: 22px;
-  height: 22px;
-}
-
 .brand {
   display: flex;
   align-items: center;
@@ -50,8 +28,8 @@
 .brand-logo {
   width: 34px;
   height: 34px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-  color: var(--color-text-inverse);
+  background: linear-gradient(135deg, #5b54d6, #4338ca);
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.875rem;
   display: flex;
@@ -64,13 +42,14 @@
 .brand-name {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #5b54d6;
   letter-spacing: -0.025em;
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .user-profile {
@@ -114,22 +93,49 @@
   color: var(--color-text-light);
 }
 
+/* Logout Button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-app);
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.logout-btn:hover {
+  background-color: var(--color-status-absent-bg);
+  border-color: rgba(185, 28, 28, 0.3);
+  color: var(--color-status-absent-text);
+  transform: translateY(-1px);
+}
+
+.logout-icon {
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 640px) {
   .topbar {
     padding: 0 1rem;
   }
 
-  .user-role {
+  .user-role,
+  .logout-text {
     display: none;
+  }
+
+  .logout-btn {
+    padding: 0.45rem;
   }
 
   .brand-name {
     font-size: 1.125rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .brand-name {
-    display: none;
   }
 }

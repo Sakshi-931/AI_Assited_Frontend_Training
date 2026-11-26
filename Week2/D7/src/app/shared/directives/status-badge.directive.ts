@@ -23,7 +23,7 @@ export class StatusBadgeDirective {
     const nativeEl = this.el.nativeElement;
 
     // Reset known status classes
-    nativeEl.classList.remove('badge-present', 'badge-late', 'badge-absent', 'badge-leave');
+    nativeEl.classList.remove('badge-present', 'badge-late', 'badge-absent', 'badge-leave', 'badge-not-marked');
 
     // Add base badge class
     nativeEl.classList.add('status-badge');
@@ -42,6 +42,9 @@ export class StatusBadgeDirective {
         break;
       case 'leave':
         nativeEl.classList.add('badge-leave');
+        break;
+      case 'not marked':
+        nativeEl.classList.add('badge-not-marked');
         break;
     }
   }

@@ -1,4 +1,15 @@
 {
+  "users": [
+    {
+      "id": "USR001",
+      "employeeId": "EMP001",
+      "email": "sakshi.khankar@edusphere.com",
+      "password": "Password123!",
+      "name": "Sakshi Khankar",
+      "role": "Frontend Developer",
+      "token": "mock-jwt-token-sakshi-khankar-2026"
+    }
+  ],
   "employees": [
     {
       "id": "EMP001",
@@ -6,7 +17,7 @@
       "role": "Frontend Developer",
       "email": "sakshi.khankar@edusphere.internal",
       "phone": "+91 98765 43210",
-      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=SakshiKhankar&backgroundColor=b6e3f4",
+      "avatarUrl": "https://api.dicebear.com/7.x/avataaars/svg?seed=SakshiKhankar&top=straight01&hairColor=2c1b18&clothing=blazerAndShirt&eyes=default&eyebrows=default&mouth=smile&skinColor=edb98a&accessoriesProbability=0&facialHairProbability=0&backgroundColor=b6e3f4",
       "joiningDate": "2025-01-10",
       "bloodGroup": "O+",
       "gender": "Female",

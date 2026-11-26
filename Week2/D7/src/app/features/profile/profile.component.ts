@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { EmployeeService } from '../../core/services/employee.service';
+import { AuthService } from '../../core/services/auth.service';
 import { PersonalDetailsComponent } from './components/personal-details.component';
 import { EmergencyContactComponent } from './components/emergency-contact.component';
 import { FamilyInfoComponent } from './components/family-info.component';
@@ -22,6 +23,7 @@ import { ErrorStateComponent } from '../../shared/components/error-state.compone
 })
 export class ProfileComponent implements OnInit {
   protected readonly employeeService = inject(EmployeeService);
+  protected readonly authService = inject(AuthService);
 
   readonly employee = this.employeeService.employee;
   readonly emergencyContacts = this.employeeService.emergencyContacts;
@@ -34,6 +36,7 @@ export class ProfileComponent implements OnInit {
   }
 
   loadProfile(): void {
-    this.employeeService.loadFullProfile('EMP001');
+    const empId = this.authService.currentUser()?.employeeId || 'EMP001';
+    this.employeeService.loadFullProfile(empId);
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employee, EmergencyContact, FamilyMember } from '../models/employee.model';
+import { environment } from '../../../environments/environment';
 import { catchError, finalize, of } from 'rxjs';
 
 @Injectable({
@@ -8,16 +9,16 @@ import { catchError, finalize, of } from 'rxjs';
 })
 export class EmployeeService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = 'http://localhost:3000';
+  private readonly baseUrl = environment.apiBaseUrl;
 
   // Fallback initial data in case json-server is starting or offline
   private readonly defaultEmployee: Employee = {
     id: 'EMP001',
     name: 'Sakshi Khankar',
     role: 'Frontend Developer',
-    email: 'sakshi.khankar@edusphere.internal',
+    email: 'sakshi.khankar@edusphere.com',
     phone: '+91 98765 43210',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=SakshiKhankar&backgroundColor=b6e3f4',
+    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=SakshiKhankar&top=straight01&hairColor=2c1b18&clothing=blazerAndShirt&eyes=default&eyebrows=default&mouth=smile&skinColor=edb98a&accessoriesProbability=0&facialHairProbability=0&backgroundColor=b6e3f4',
     joiningDate: '2025-01-10',
     bloodGroup: 'O+',
     gender: 'Female',
@@ -29,7 +30,7 @@ export class EmployeeService {
     {
       id: 'EMG-001',
       employeeId: 'EMP001',
-      name: 'Ramesh Khankar',
+      name: 'Vilas Khankar',
       relationship: 'Father',
       phone: '+91 98765 00001',
       address: 'Same as permanent residence',
@@ -37,7 +38,7 @@ export class EmployeeService {
     {
       id: 'EMG-002',
       employeeId: 'EMP001',
-      name: 'Aakash Khankar',
+      name: 'Aryan Khankar',
       relationship: 'Brother',
       phone: '+91 98765 00003',
       address: 'Kothrud, Pune, Maharashtra',
@@ -48,14 +49,14 @@ export class EmployeeService {
     {
       id: 'FAM-001',
       employeeId: 'EMP001',
-      name: 'Sunita Khankar',
+      name: 'Savita Khankar',
       relationship: 'Mother',
       phone: '+91 98765 00002',
     },
     {
       id: 'FAM-002',
       employeeId: 'EMP001',
-      name: 'Ramesh Khankar',
+      name: 'Vilas Khankar',
       relationship: 'Father',
       phone: '+91 98765 00001',
     },

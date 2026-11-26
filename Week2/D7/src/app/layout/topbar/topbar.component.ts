@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
 import { EmployeeService } from '../../core/services/employee.service';
-import { UiStateService } from '../../core/services/ui-state.service';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-topbar',
@@ -11,21 +11,20 @@ import { UiStateService } from '../../core/services/ui-state.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopbarComponent implements OnInit {
-  protected readonly uiState = inject(UiStateService);
   protected readonly employeeService = inject(EmployeeService);
+  protected readonly authService = inject(AuthService);
 
-  // Readonly signals from services
+  // Readonly signal from employee service
   protected readonly currentEmployee = this.employeeService.employee;
-  protected readonly isSidebarOpen = this.uiState.isSidebarOpen;
 
   ngOnInit(): void {
-    // Initial load for employee header profile if not yet fetched
     if (!this.currentEmployee()) {
-      this.employeeService.loadEmployee('EMP001');
+      const empId = this.authService.currentUser()?.employeeId || 'EMP001';
+      this.employeeService.loadEmployee(empId);
     }
   }
 
-  toggleSidebar(): void {
-    this.uiState.toggleSidebar();
+  logout(): void {
+    this.authService.logout();
   }
 }

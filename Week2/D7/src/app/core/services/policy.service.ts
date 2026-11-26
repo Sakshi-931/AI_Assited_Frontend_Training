@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompanyPolicy } from '../models/policy.model';
+import { environment } from '../../../environments/environment';
 import { catchError, finalize, of } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { catchError, finalize, of } from 'rxjs';
 })
 export class PolicyService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = 'http://localhost:3000';
+  private readonly baseUrl = environment.apiBaseUrl;
 
   private readonly defaultPolicies: CompanyPolicy[] = [
     {

@@ -1,8 +1,23 @@
-<aside class="sidebar" [class.collapsed]="!isSidebarOpen()" aria-label="Sidebar Navigation">
+<aside class="sidebar" [class.pinned]="isSidebarOpen()" aria-label="Sidebar Navigation">
+  <!-- Sidebar Header with Hamburger button on top of icons -->
   <div class="sidebar-header">
-    <span class="nav-section-title">Navigation Menu</span>
+    <button
+      type="button"
+      class="hamburger-btn"
+      (click)="toggleSidebar()"
+      [attr.title]="isSidebarOpen() ? 'Unpin sidebar' : 'Pin sidebar expanded'"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="isSidebarOpen()">
+      <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <span class="nav-section-title">Navigation</span>
   </div>
 
+  <!-- Navigation items (icons always visible, labels reveal on hover/pin) -->
   <nav class="sidebar-nav">
     <ul class="nav-list">
       @for (item of navItems; track item.route) {
@@ -11,7 +26,7 @@
             [routerLink]="item.route"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            (click)="handleLinkClick()"
+            [attr.title]="item.label"
             class="nav-link">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path [attr.d]="item.iconSvg" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -24,6 +39,6 @@
   </nav>
 
   <div class="sidebar-footer">
-    <div class="version-badge">v1.0.0 &bull; Angular 21</div>
+    <div class="version-badge">&copy; 2026 All Rights Reserved</div>
   </div>
 </aside>

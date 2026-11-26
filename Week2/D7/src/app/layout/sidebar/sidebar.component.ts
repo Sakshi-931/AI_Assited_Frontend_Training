@@ -49,4 +49,8 @@ export class SidebarComponent {
       this.uiState.closeSidebar();
     }
   }
+
+  toggleSidebar(): void {
+    this.uiState.toggleSidebar();
+  }
 }

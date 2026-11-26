@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { TodayPunch } from '../../../core/models/attendance.model';
 import { StatusBadgeDirective } from '../../../shared/directives/status-badge.directive';
 
@@ -12,4 +12,9 @@ import { StatusBadgeDirective } from '../../../shared/directives/status-badge.di
 })
 export class PunchCardComponent {
   readonly punch = input<TodayPunch | null>(null);
+  readonly togglePunch = output<void>();
+
+  onTogglePunch(): void {
+    this.togglePunch.emit();
+  }
 }

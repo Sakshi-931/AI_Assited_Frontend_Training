@@ -4,8 +4,8 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class UiStateService {
-  // Sidebar open/closed state across application shell
-  private readonly _isSidebarOpen = signal<boolean>(true);
+  // Sidebar open/closed state (defaults to false for compact hover-rail mode)
+  private readonly _isSidebarOpen = signal<boolean>(false);
 
   // Readonly signal exposed to components
   readonly isSidebarOpen = this._isSidebarOpen.asReadonly();
